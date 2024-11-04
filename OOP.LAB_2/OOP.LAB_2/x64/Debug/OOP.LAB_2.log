@@ -1,0 +1,8 @@
+﻿  Task1.cpp
+  Task2.cpp
+C:\Users\админ\source\repos\oop-labs\OOP.LAB_2\Task2.cpp(44,43): warning C4267: +=: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\админ\source\repos\oop-labs\OOP.LAB_2\Task2.cpp(77,24): warning C4244: return: преобразование "__int64" в "int", возможна потеря данных
+  Создание кода...
+  OOP.LAB_2.vcxproj -> C:\Users\админ\source\repos\oop-labs\OOP.LAB_2\x64\Debug\OOP.LAB_2.exe
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.
