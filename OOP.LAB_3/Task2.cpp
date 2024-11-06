@@ -6,17 +6,40 @@ using namespace std;
 enum class Intensity { LIGHT, NORMAL, STRONG };
 enum class SyrupType { MACADAMIA, VANILLA, COCONUT, CARAMEL, CHOCOLATE, POPCORN };
 
+// Function to convert Intensity enum to string
+string intensityToString(Intensity intensity) {
+    switch (intensity) {
+    case Intensity::LIGHT: return "Light";
+    case Intensity::NORMAL: return "Normal";
+    case Intensity::STRONG: return "Strong";
+    default: return "Unknown";
+    }
+}
+
+// Function to convert SyrupType enum to string
+string syrupTypeToString(SyrupType syrup) {
+    switch (syrup) {
+    case SyrupType::MACADAMIA: return "Macadamia";
+    case SyrupType::VANILLA: return "Vanilla";
+    case SyrupType::COCONUT: return "Coconut";
+    case SyrupType::CARAMEL: return "Caramel";
+    case SyrupType::CHOCOLATE: return "Chocolate";
+    case SyrupType::POPCORN: return "Popcorn";
+    default: return "Unknown";
+    }
+}
+
 class Coffee {
 protected:
     Intensity intensity;
-     string name;
+    string name;
 
 public:
-    Coffee(Intensity intensity, const  string& name)
+    Coffee(Intensity intensity, const string& name)
         : intensity(intensity), name(name) {}
 
     virtual void printDetails() const {
-         cout << "Coffee: " << name << "\nCoffee Intensity: " << static_cast<int>(intensity) <<  endl;
+        cout << "Coffee: " << name << "\nCoffee Intensity: " << intensityToString(intensity) << endl;
     }
 };
 
@@ -29,8 +52,8 @@ public:
         : Coffee(intensity, "Cappuccino"), mlOfMilk(mlOfMilk) {}
 
     void printDetails() const override {
-        Coffee::printDetails(); 
-         cout << name << " Milk: " << mlOfMilk << " ml" <<  endl;
+        Coffee::printDetails();
+        cout << name << " Milk: " << mlOfMilk << " ml" << endl;
     }
 };
 
@@ -45,8 +68,8 @@ public:
     }
 
     void printDetails() const override {
-        Cappuccino::printDetails(); 
-         cout << "Pumpkin Spice: " << mgOfPumpkinSpice << " mg" <<  endl;
+        Cappuccino::printDetails();
+        cout << "Pumpkin Spice: " << mgOfPumpkinSpice << " mg" << endl;
     }
 };
 
@@ -59,8 +82,8 @@ public:
         : Coffee(intensity, "Americano"), mlOfWater(mlOfWater) {}
 
     void printDetails() const override {
-        Coffee::printDetails(); 
-         cout << "Water: " << mlOfWater << " ml" <<  endl;
+        Coffee::printDetails();
+        cout << "Water: " << mlOfWater << " ml" << endl;
     }
 };
 
@@ -75,8 +98,8 @@ public:
     }
 
     void printDetails() const override {
-        Cappuccino::printDetails(); 
-         cout << "Syrup: " << static_cast<int>(syrup) <<  endl;
+        Cappuccino::printDetails();
+        cout << "Syrup: " << syrupTypeToString(syrup) << endl;
     }
 };
 
